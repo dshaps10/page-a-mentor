@@ -2,6 +2,7 @@ class CreateIssues < ActiveRecord::Migration
   def change
     create_table :issues do |t|
       t.integer :category_id, index: true
+      t.integer :user_id, index: true
       t.string :summary
       t.string :details
       t.string :user
