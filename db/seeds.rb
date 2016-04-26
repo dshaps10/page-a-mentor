@@ -1,1 +1,8 @@
-5.times { Task.}
+basic_ruby = Category.create(title: 'Basic Ruby', description: 'This category pertains to any assistance you may need with basic, object-oriented Ruby problems. Being that James is a Ruby maven, he is quite adept to handle such issues')
+sql = Category.create(title: 'SQL', description: 'this category covers any question regarding SQL-related questions')
+oo_js = Category.create(title: "Object Oriented JavaScript", description: 'This category covers all problems pertaining to JavaScript challenges, such as those in Phase 2.  Have a question about Orange Trees? Better believe that James has the answer.')
+sinatra = Category.create(title: 'Sinatra', description: 'This category covers, you guessed it, questions related to Sinatra challenges. Does Sinatra not know that ditty, well you can be sure that James does')
+final_project = Category.create(title: 'Final Project', description: 'This category covers all final project-related questions. Whether you need help designing a many-to-many relationship, bootstrapping your front end, or just want someone to take a break and grab a beer with, James is your man')
+general_front_end = Category.create(title: 'General Front-End Questons', description: 'Whether it\'s designing your landing page, writing an AJAX request or even materializing that sign-up form, No question is too big for James')
+general_back_end = Category.create(title: 'General Back-End Questions', description: 'This category is for any questions you might have regarding the M and C portions of your MVC app. James knows a thing or two about back-ends')
+personal = Category.create(title: 'Personal Problems', description: 'Relationship problems, stressed out? Feel free to share your feelings with James, DBC\'s sensitive mentor')
