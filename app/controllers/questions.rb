@@ -1,6 +1,6 @@
 get '/questions/new' do
   @categories = Category.all
-  # @student = User.find(session[:id])
+  @student = User.find(session[:user_id])
   erb :question
 end
 

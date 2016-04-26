@@ -1,12 +1,14 @@
-<div class="question-container">
+<div class="center-me">
   <form action="/questions" method="post">
-    <h3>Select a category</h3>
+    <h2>Select a category</h2>
     <select name="category">
       <%@categories.each do |category|%>
         <option value="<%=category.id%>"><%=category.title%></option>
       <%end%>
     </select><br>
+    <h3>Write a Brief Summary</h3>
     <input type="text" name="summary" placeholder="summary"><br>
+    <h3>Now the gritty details</h3>
     <input type="text" name="details" placeholder="details">
   </form>
 </div>
