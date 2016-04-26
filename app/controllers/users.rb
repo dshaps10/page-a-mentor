@@ -29,3 +29,11 @@ post '/login' do
     redirect '/login/new'
   end
 end
+
+get '/users/:id/profile' do
+  if session[:user_id] == params[:id]
+    erb :profile
+  else
+    erb :error
+  end
+end
