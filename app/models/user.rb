@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :issues
 
-  validates :last_name, :first_name, :phase, presence: true
+  validates :last_name, :first_name, :email, presence: true
 
   def password
     @password ||= Password.new(password_hash) if password_hash.present?

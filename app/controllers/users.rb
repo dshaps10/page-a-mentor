@@ -12,22 +12,18 @@ post '/login' do
   end
 end
 
-get '/login/new' do
+get '/sign_up/new' do
   erb :sign_up
 end
 
-post '/login' do
-  user = User.new(last_name: params[:last_name],
-                  first_name: params[:fist_name],
-                  phase: params[:phase],
-                  email: params[:email],
-                  password: params[:password])
-  user.save
-  if user.save
-    redirect "/users/#{user.id}/profile"
-  else
-    redirect '/login/new'
-  end
+post '/sign_up' do
+  User.create(last_name: params[:last_name],
+              first_name: params[:first_name],
+              phase: params[:email],
+              email: params[:email],
+              password: params[:email])
+  # redirect "/users/#{user.id}/profile"
+  redirect '/login'
 end
 
 get '/users/:id/profile' do
