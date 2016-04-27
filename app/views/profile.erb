@@ -1,11 +1,11 @@
 <div class="center-me">
   <a href="/logout">Logout</a>
   <h1>Hey there <%=@user.first_name%></h1>
-  <h2>Ready to bug James?</h2>
-  <form action="/questions/new" method="get">
+  <h2>Bug James or check out your past issues</h2>
+  <form action="<%="/users/#{@user.id}/questions/new"%>" method="get">
     <input type="submit" value="Ask James!">
   </form><br>
-  <form action="<%="/users/#{@user.id}/issues"%>" method="get">
+  <form action="<%="/users/#{@user.id}/questions"%>" method="get">
     <input type="submit" value="Show past issues">
   </form>
 </div>
