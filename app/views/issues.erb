@@ -1,0 +1,11 @@
+<div class="center-me">
+  <h1>Your past issues</h1>
+  <p><a href="<%="/users/#{@user.id}/profile"%>">Go back to your profile</a></p>
+  <%@issues.each do |issue|%>
+    <div class="issue-listing">
+      <h3><%=issue.summary%></h3>
+      <p><%=issue.details%></p>
+      <p><%=issue.created_at%></p>
+    </div>
+  <%end%>
+</div>

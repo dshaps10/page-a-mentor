@@ -5,7 +5,6 @@ class CreateIssues < ActiveRecord::Migration
       t.integer :user_id, index: true
       t.string :summary
       t.string :details
-      t.string :user
       t.string :location
 
       t.timestamps null: false

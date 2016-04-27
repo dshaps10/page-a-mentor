@@ -1,10 +1,35 @@
-/** {
-  outline: 1px solid blue;
-}*/
+* {
+  /*outline: 1px solid blue;*/
+  font-family: "Noto Sans";
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-image: url('http://www.desktopimages.org/pictures/2015/0310/1/orig_68893.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 1.5em;
+}
 
 .center-me {
+  position: relative;
+  top: 200px;
   margin: auto;
-  width: 50%;
-  padding: 10px;
+  width: 40%;
   text-align: center;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: #DFDCE3;
+  color: grey;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.issue-listing {
+  margin: auto;
+  margin-bottom: 30px;
+  width: 50%;
 }

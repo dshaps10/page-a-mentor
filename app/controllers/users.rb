@@ -35,6 +35,12 @@ get '/users/:id/profile' do
   end
 end
 
+get '/users/:id/issues' do
+  @user = User.find(session[:user_id])
+  @issues = Issue.where(user_id: @user.id)
+  erb :issues
+end
+
 delete '/logout' do
   session.clear
   redirect '/'
