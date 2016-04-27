@@ -22,7 +22,6 @@ post '/sign_up' do
                      phase: params[:phase],
                      email: params[:email],
                      password: params[:password])
-  # redirect "/users/#{user.id}/profile"
   redirect "/users/#{user.id}/profile"
 end
 

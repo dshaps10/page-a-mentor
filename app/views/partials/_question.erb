@@ -1,0 +1,15 @@
+<form action="/questions" method="post">
+  <h2>Select a category</h2>
+  <select name="category">
+    <%@categories.each do |category|%>
+      <option value="<%=category.id%>"><%=category.title%></option>
+    <%end%>
+  </select><br>
+  <h3>Write a Brief Summary</h3>
+  <textarea name="summary" rows="1" cols="50" placeholder="Summary"></textarea><br>
+  <h3>Now the gritty details</h3>
+  <textarea name="details" rows="4" cols="50" placeholder="Details"></textarea><br>
+  <h3>Where are you?</h3>
+  <textarea name="location" rows="1" cols="50" placeholder="Location"></textarea><br>
+  <input type="submit" value="Ask away!">
+</form>
