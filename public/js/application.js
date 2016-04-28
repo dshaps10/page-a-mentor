@@ -1,18 +1,40 @@
 $(document).ready(function() {
-  $("#new-account").click(function(event) {
+
+  // Makes sign in form appear
+  $('#log-in').submit(function(event) {
     event.preventDefault();
-    $target = $(this)
-    route = $target.attr("href");
-    $target.hide();
+    $target = $(this);
+    $container = $('.inner');
+    route = $target.attr('action');
+    $container.fadeOut('slow');
 
     var ajaxRequest = $.ajax({
-      method: "GET",
+      method: 'GET',
       url: route,
-      dataType: "html"
+      dataType: 'html'
     });
 
     ajaxRequest.done(function(response) {
-      $(".center-me").append(response);
+      $('.splash').append(response);
+    })
+  });
+
+  // Makes registration form appear
+  $('#sign-up').submit(function(event) {
+    event.preventDefault();
+    $target = $(this);
+    $container = $('.inner');
+    route = $target.attr('href');
+    $container.fadeOut('slow');
+
+    var ajaxRequest = $.ajax({
+      method: 'GET',
+      url: route,
+      dataType: 'html'
+    });
+
+    ajaxRequest.done(function(response) {
+      $('splash').append(response);
     });
   });
 });

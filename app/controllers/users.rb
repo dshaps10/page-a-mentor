@@ -1,5 +1,9 @@
 get '/login' do
-  erb :sign_in
+  if request.xhr?
+    erb :'partials/_sign_in', layout: false
+  else
+    erb :sign_in
+  end
 end
 
 post '/login' do

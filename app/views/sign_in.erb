@@ -1,12 +1,11 @@
-<div class="center-me">
-  <h1>Welcome to Ask James!</h1>
-  <div>
-    <h2>Log in here</h2>
-    <form action="/login" method="post">
-      <input type="text" name="email" placeholder="email"><br><br>
-      <input type="password" name="password" placeholder="password"><br><br>
-      <input type="submit" value="Log In">
+<div class="splash">
+  <div class="inner">
+    <h1>Welcome to AskJames!</h1>
+    <form id="log-in" action="/login">
+      <input class="submit" type="submit" value="Log In">
     </form><br>
-    <p><a href="/sign_up/new" id="new-account">Don't have an account? make one here!</a></p>
+    <form id="sign-up" action="/sign_up/new">
+      <input class="submit" type="submit" value="Sign Up">
+    </form>
   </div>
 </div>
