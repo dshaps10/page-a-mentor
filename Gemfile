@@ -16,6 +16,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'byebug'
+gem 'twilio-ruby'
 
 group :test do
   gem 'shoulda-matchers'

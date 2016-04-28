@@ -1,11 +1,11 @@
 <div class="inner">
-  <a href="/logout">Logout</a>
+  <a class="link" href="/logout">Logout</a>
   <h1>Hey there <%=user.first_name%></h1>
   <h2>Bug James or check out your past issues</h2>
   <form id="question-form" class="submit" action="<%="/users/#{user.id}/questions/new"%>" method="get">
     <input type="submit" value="Ask James!">
   </form><br>
-  <form class="submit" action="<%="/users/#{user.id}/questions"%>" method="get">
+  <form id="issue-form" class="submit" action="<%="/users/#{user.id}/questions"%>" method="get">
     <input type="submit" value="Show past issues">
   </form>
 </div>

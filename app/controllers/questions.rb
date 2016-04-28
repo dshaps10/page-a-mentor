@@ -1,11 +1,7 @@
 get '/users/:id/questions/new' do
   @categories = Category.all
   @student = User.find(session[:user_id])
-  if request.xhr?
-    erb :'partials/_question', layout: false, locals: { categories: @categories, student: @student }
-  else
-    erb :question
-  end
+  erb :question
 end
 
 post '/users/:id/questions' do

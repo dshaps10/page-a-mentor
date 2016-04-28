@@ -1,27 +1,19 @@
 get '/login' do
-  if request.xhr?
-    erb :'partials/_sign_in', layout: false
-  else
-    erb :sign_in
-  end
+  erb :login
 end
 
 post '/login' do
   @user = User.find_by_email(params[:email])
   if @user.password == params[:password]
     session[:user_id] = @user.id
-    redirect "/users/#{@user.id}/profile"
+    erb :profile
   else
     erb :error
   end
 end
 
 get '/sign_up/new' do
-  if request.xhr?
-    erb :'partials/_sign_up', layout: false
-  else
-    erb :sign_up
-  end
+  erb :sign_up
 end
 
 post '/sign_up' do

@@ -1,59 +1,31 @@
 $(document).ready(function() {
 
-  // Makes sign in form appear
+  // Makes splash page disappear
   $('#log-in').submit(function(event) {
-    event.preventDefault();
-    $target = $(this);
-    $container = $('.inner');
-    route = $target.attr('action');
-    $container.fadeOut('slow');
-
-    var ajaxRequest = $.ajax({
-      method: 'GET',
-      url: route,
-      dataType: 'html'
-    });
-
-    ajaxRequest.done(function(response) {
-      $('.splash').append(response);
-    })
+    $('.inner').fadeOut('slow');
   });
 
   // Makes registration form appear
   $('#sign-up').submit(function(event) {
-    event.preventDefault();
-    $target = $(this);
-    $container = $('.inner');
-    route = $target.attr('action');
-    $container.fadeOut('slow');
-
-    var ajaxRequest = $.ajax({
-      method: 'GET',
-      url: route,
-      dataType: 'html'
-    });
-
-    ajaxRequest.done(function(response) {
-      $('.splash').append(response);
-    });
+    $('.inner').fadeOut('slow');
   });
 
   // Opens question form
   $('#question-form').submit(function(event) {
-    event.preventDefault();
-    $target = $(this);
-    $container = $('.inner');
-    route = $target.attr('action');
-    $container.fadeOut('slow');
+    $('.inner').fadeOut('slow');
+  });
 
-    var ajaxRequest = $.ajax({
-      method: 'GET',
-      url: route,
-      dataType: 'html'
-    });
+  // Submits question form
+  $('#sign-in-form').submit(function(event) {
+    $('.inner').fadeOut('slow');
+  });
 
-    ajaxRequest.done(function(response) {
-      $('.splash').append(response);
-    });
+  // Submits past issues
+  $('#issue-form').submit(function(event) {
+    $('.inner').fadeOut('slow');
+  });
+
+  $('.link').click(function(event) {
+    $('.inner').fadeOut('slow');
   });
 });
