@@ -24,7 +24,7 @@ $(document).ready(function() {
     event.preventDefault();
     $target = $(this);
     $container = $('.inner');
-    route = $target.attr('href');
+    route = $target.attr('action');
     $container.fadeOut('slow');
 
     var ajaxRequest = $.ajax({
@@ -34,7 +34,26 @@ $(document).ready(function() {
     });
 
     ajaxRequest.done(function(response) {
-      $('splash').append(response);
+      $('.splash').append(response);
+    });
+  });
+
+  // Opens question form
+  $('#question-form').submit(function(event) {
+    event.preventDefault();
+    $target = $(this);
+    $container = $('.inner');
+    route = $target.attr('action');
+    $container.fadeOut('slow');
+
+    var ajaxRequest = $.ajax({
+      method: 'GET',
+      url: route,
+      dataType: 'html'
+    });
+
+    ajaxRequest.done(function(response) {
+      $('.splash').append(response);
     });
   });
 });

@@ -5,6 +5,7 @@
 
 a {
   text-decoration: none;
+  color: red;
 }
 
 body {
@@ -47,4 +48,8 @@ body {
   margin: auto;
   margin-bottom: 30px;
   width: 50%;
+}
+
+.form {
+  color: black;
 }
