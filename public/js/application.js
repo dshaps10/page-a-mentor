@@ -1,7 +1,18 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $("#new-account").click(function(event) {
+    event.preventDefault();
+    $target = $(this)
+    route = $target.attr("href");
+    $target.hide();
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    var ajaxRequest = $.ajax({
+      method: "GET",
+      url: route,
+      dataType: "html"
+    });
+
+    ajaxRequest.done(function(response) {
+      $(".center-me").append(response);
+    });
+  });
 });

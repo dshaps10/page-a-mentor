@@ -13,7 +13,11 @@ post '/login' do
 end
 
 get '/sign_up/new' do
-  erb :sign_up
+  if request.xhr?
+    erb :'partials/_sign_up', layout: false
+  else
+    erb :sign_up
+  end
 end
 
 post '/sign_up' do
@@ -25,16 +29,21 @@ post '/sign_up' do
   redirect "/users/#{user.id}/profile"
 end
 
+# get '/users/:id/profile' do
+#   @user = User.find(params[:id])
+#   if session[:user_id] == @user.id
+#     erb :profile
+#   else
+#     erb :error
+#   end
+# end
+
 get '/users/:id/profile' do
   @user = User.find(params[:id])
-  if session[:user_id] == @user.id
-    erb :profile
-  else
-    erb :error
-  end
+  erb :profile
 end
 
-delete '/logout' do
+get '/logout' do
   session.clear
   redirect '/'
 end

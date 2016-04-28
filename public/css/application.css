@@ -13,14 +13,14 @@ body {
   background-attachment: fixed;
   background-size: cover;
   text-transform: uppercase;
-  /*font-size: 1.5em;*/
+  font-size: 0.90em;
 }
 
 .center-me {
   position: relative;
-  top: 200px;
+  top: 100px;
   margin: auto;
-  width: 40%;
+  width: 60%;
   text-align: center;
   padding-top: 90px;
   padding-bottom: 90px;
