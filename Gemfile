@@ -17,6 +17,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'byebug'
 gem 'twilio-ruby'
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'
