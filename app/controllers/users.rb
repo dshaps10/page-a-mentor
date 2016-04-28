@@ -1,12 +1,12 @@
 get '/login' do
-  erb :sign_in
+  erb :login
 end
 
 post '/login' do
   @user = User.find_by_email(params[:email])
   if @user.password == params[:password]
     session[:user_id] = @user.id
-    redirect "/users/#{@user.id}/profile"
+    erb :profile
   else
     erb :error
   end
@@ -25,16 +25,21 @@ post '/sign_up' do
   redirect "/users/#{user.id}/profile"
 end
 
+# get '/users/:id/profile' do
+#   @user = User.find(params[:id])
+#   if session[:user_id] == @user.id
+#     erb :profile
+#   else
+#     erb :error
+#   end
+# end
+
 get '/users/:id/profile' do
   @user = User.find(params[:id])
-  if session[:user_id] == @user.id
-    erb :profile
-  else
-    erb :error
-  end
+  erb :profile
 end
 
-delete '/logout' do
+get '/logout' do
   session.clear
   redirect '/'
 end

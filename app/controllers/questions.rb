@@ -8,10 +8,18 @@ post '/users/:id/questions' do
   user = User.find(session[:user_id])
   category = Category.find(params[:category])
 
-  user.issues.create(category_id: category.id,
+  issue = user.issues.create(category_id: category.id,
                      summary: params[:summary],
                      details: params[:details],
                      location: params[:location])
+  msg = "Summary: #{issue.summary}, Details: #{issue.details}, Where am I: #{issue.location}"
+  @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
+
+  message = @client.account.messages.create(:body => msg,
+    :to => "+17326726197",
+    :from => "+17328677939")
+  puts message.sid
+
   redirect "/users/#{user.id}/questions"
 end
 

@@ -1,7 +1,31 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  // Makes splash page disappear
+  $('#log-in').submit(function(event) {
+    $('.inner').fadeOut('slow');
+  });
+
+  // Makes registration form appear
+  $('#sign-up').submit(function(event) {
+    $('.inner').fadeOut('slow');
+  });
+
+  // Opens question form
+  $('#question-form').submit(function(event) {
+    $('.inner').fadeOut('slow');
+  });
+
+  // Submits question form
+  $('#sign-in-form').submit(function(event) {
+    $('.inner').fadeOut('slow');
+  });
+
+  // Submits past issues
+  $('#issue-form').submit(function(event) {
+    $('.inner').fadeOut('slow');
+  });
+
+  $('.link').click(function(event) {
+    $('.inner').fadeOut('slow');
+  });
 });

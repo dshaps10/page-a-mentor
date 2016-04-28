@@ -1,26 +1,26 @@
 * {
   /*outline: 1px solid blue;*/
-  font-family: "Noto Sans";
+  font-family: "Roboto";
 }
 
 a {
   text-decoration: none;
+  color: red;
 }
 
 body {
-  background-image: url('http://www.desktopimages.org/pictures/2015/0310/1/orig_68893.jpg');
+  background-image: url('http://orig11.deviantart.net/20eb/f/2015/030/6/f/_minflat__dark_material_design_wallpaper__4k__by_dakoder-d8fjqzu.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  text-transform: uppercase;
-  /*font-size: 1.5em;*/
+  font-size: 0.90em;
 }
 
 .center-me {
   position: relative;
-  top: 200px;
+  top: 100px;
   margin: auto;
-  width: 40%;
+  width: 60%;
   text-align: center;
   padding-top: 90px;
   padding-bottom: 90px;
@@ -29,8 +29,27 @@ body {
   box-shadow: 10px 10px 5px #888888;
 }
 
+.splash {
+  position: relative;
+  top: 100px;
+  margin: auto;
+  width: 60%;
+  text-align: center;
+  padding-top: 90px;
+  font-size: 2em;
+  color: white;
+}
+
+.submit {
+  color: black;
+}
+
 .issue-listing {
   margin: auto;
   margin-bottom: 30px;
   width: 50%;
+}
+
+.form {
+  color: black;
 }

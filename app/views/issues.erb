@@ -1,5 +1,7 @@
-<div class="center-me">
-  <h1>Your past issues</h1>
-  <p><a href="<%="/users/#{@user.id}/profile"%>">Go back to your profile</a></p>
-  <%=erb :'partials/_issues', layout: false, locals: { issues: @issues }%>
+<div class="splash">
+  <div class="inner">
+    <h1>Your past issues</h1>
+    <p><a class="link" href="<%="/users/#{@user.id}/profile"%>">Go back to your profile</a></p>
+    <%=erb :'partials/_issues', layout: false, locals: { issues: @issues }%>
+  </div>
 </div>
