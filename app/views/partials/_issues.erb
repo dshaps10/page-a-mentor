@@ -1,6 +1,7 @@
 <%issues.each do |issue|%>
   <hr><div class="issue-listing">
     <h3><%=issue.summary%></h3>
+    <p><%=issue.category.title%></p>
     <p><%=issue.details%></p>
     <p><%=issue.created_at%></p>
   </div>

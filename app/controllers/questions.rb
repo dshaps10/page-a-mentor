@@ -12,11 +12,29 @@ post '/users/:id/questions' do
                      summary: params[:summary],
                      details: params[:details],
                      location: params[:location])
-  msg = "Summary: #{issue.summary}, Details: #{issue.details}, Where am I: #{issue.location}"
+  msg = <<-HEREDOC
+  Student Name:
+  #{user.first_name} #{user.last_name} (#{user.phase})
+
+  Category:
+  #{issue.category.title}
+
+  Summary:
+  #{issue.summary}
+
+  Details:
+  #{issue.details}
+
+  Where Am I:
+  #{issue.location}
+
+  HEREDOC
+  # "Summary: #{issue.summary}, Details: #{issue.details}, Where am I: #{issue.location}"
+
   @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
 
   message = @client.account.messages.create(:body => msg,
-    :to => "+17326726197",
+    :to => "+14152461132",
     :from => "+17328677939")
   puts message.sid
 
