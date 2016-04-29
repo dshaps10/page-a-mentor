@@ -1,22 +1,22 @@
-get '/login' do
+get '/sessions/new' do
   erb :login
 end
 
-post '/login' do
+post '/sessions' do
   @user = User.find_by_email(params[:email])
   if @user.password == params[:password]
     session[:user_id] = @user.id
-    erb :profile
+    redirect "/users/#{@user.id}/profile"
   else
     erb :error
   end
 end
 
-get '/sign_up/new' do
+get '/users/new' do
   erb :sign_up
 end
 
-post '/sign_up' do
+post '/users' do
   user = User.create(last_name: params[:last_name],
                      first_name: params[:first_name],
                      phase: params[:phase],
