@@ -1,11 +1,11 @@
 get '/users/:id/questions/new' do
   @categories = Category.all
-  @student = User.find(session[:user_id])
+  @student = User.find(params[:id])
   erb :question
 end
 
 post '/users/:id/questions' do
-  user = User.find(session[:user_id])
+  user = User.find(params[:id])
   category = Category.find(params[:category])
 
   issue = user.issues.create(category_id: category.id,
