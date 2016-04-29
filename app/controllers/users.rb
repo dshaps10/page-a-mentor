@@ -4,11 +4,11 @@ end
 
 post '/sessions' do
   @user = User.find_by_email(params[:email])
-  if @user.password == params[:password]
+  if @user && @user.password == params[:password]
     session[:user_id] = @user.id
     redirect "/users/#{@user.id}/profile"
   else
-    erb :error
+    erb :login
   end
 end
 
