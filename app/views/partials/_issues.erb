@@ -3,6 +3,6 @@
     <h3><%=issue.summary%></h3>
     <p><%=issue.category.title%></p>
     <p><%=issue.details%></p>
-    <p><%=issue.created_at%></p>
+    <p><%=issue.created_at.strftime("%b %d, %Y")%></p>
   </div>
 <%end%>
