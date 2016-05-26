@@ -3,7 +3,7 @@
   <h1>Hey there, <%=user.first_name%>!</h1>
   <h2>Bug James or check out your past issues</h2>
   <form id="question-form" class="submit" action="<%="/users/#{user.id}/questions/new"%>" method="get">
-    <input style="background-color: red; color: white; border: red;" type="submit" value="Ask James!">
+    <input style="background-color: red; color: white; border: red;" type="submit" value="Page a Mentor!">
   </form><br>
   <form id="issue-form" class="submit" action="<%="/users/#{user.id}/questions"%>" method="get">
     <input style="background-color: red; color: white; border: red;" type="submit" value="Show past issues">
